@@ -1,0 +1,28 @@
+
+@model IEnumerable<CampusTech.Models.Reservations>
+
+<h2>Listado de Reservas</h2>
+<table border="1" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Código</th><th>Profesor</th><th>Correo</th><th>Lab</th>
+            <th>Fecha</th><th>Inicio</th><th>Fin</th><th>Motivo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.CodigoReserva</td>
+                <td>@r.NombreProfesor</td>
+                <td>@r.Correo</td>
+                <td>@r.Laboratorio</td>
+                <td>@r.FechaReserva.ToShortDateString()</td>
+                <td>@r.HoraInicio</td>
+                <td>@r.HoraFin</td>
+                <td>@r.Motivo</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Reservations/Create">Crear nueva reserva</a>

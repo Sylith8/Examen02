@@ -1,0 +1,51 @@
+
+@model CampusTech.Models.Reservations
+
+<h2>Crear Reserva</h2>
+
+<form method="post">
+    <label>Profesor</label>
+    <input asp-for="NombreProfesor" />
+    <span asp-validation-for="NombreProfesor"></span><br/>
+
+    <label>Correo</label>
+    <input asp-for="Correo" />
+    <span asp-validation-for="Correo"></span><br/>
+
+    <label>Laboratorio</label>
+    <select asp-for="Laboratorio">
+        <option value="">Seleccione…</option>
+        <option>Lab-01</option>
+        <option>Lab-02</option>
+        <option>Lab-03</option>
+        <option>Lab-Redes</option>
+        <option>Lab-IA</option>
+    </select>
+    <span asp-validation-for="Laboratorio"></span><br/>
+
+    <label>Fecha</label>
+    <input asp-for="FechaReserva" type="date" />
+    <span asp-validation-for="FechaReserva"></span><br/>
+
+    <label>Hora Inicio</label>
+    <input asp-for="HoraInicio" type="time" />
+    <span asp-validation-for="HoraInicio"></span><br/>
+
+    <label>Hora Fin</label>
+    <input asp-for="HoraFin" type="time" />
+    <span asp-validation-for="HoraFin"></span><br/>
+
+    <label>Motivo</label>
+    <textarea asp-for="Motivo"></textarea>
+    <span asp-validation-for="Motivo"></span><br/>
+
+    <label>Código Reserva</label>
+    <input asp-for="CodigoReserva" />
+    <span asp-validation-for="CodigoReserva"></span><br/>
+
+    <button type="submit">Guardar</button>
+</form>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
